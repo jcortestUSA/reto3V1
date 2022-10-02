@@ -1,8 +1,8 @@
 // ContentType: Cuando envíe datos al servidor, use este tipo de contenido. El valor predeterminado es application/x-www-form-urlencoded; charset=UTF-8, lo cual está bien para la mayoría de los casos.
 // DataType: El tipo de datos que espera del servidor. Si no se especifica ninguno, jQuery intentará inferirlo en función del tipo MIME de la respuesta. Puede ser text, xml, html, script, json, jsonp.
-const BASE_URL = 'http://localhost:8080'
+//const BASE_URL = 'http://localhost:8080'
 //const BASE_URL = 'http://localhost:81'
-//const BASE_URL = 'http://158.101.14.62:81'
+const BASE_URL = 'http://158.101.14.62:81'
 function guardarInformacionCategoria(){
 
     $("#resultado").empty();
@@ -34,7 +34,7 @@ function guardarInformacionCategoria(){
 function traerInformacionCategoria(){
     $.ajax(
               {
-                url: BASE_URL + "/api/Category/all",
+                url: BASE_URL + '/api/Category/all',
                 type:"GET",
                 datatype:"JSON",
                 success:function(respuesta){                
@@ -77,7 +77,7 @@ function pintarRespuestaCategoria(items){
 function traerInformacionBicicleta(){
     $.ajax(
               {
-                url:BASE_URL + "/api/Bike/all",
+                url:BASE_URL + '/api/Bike/all',
                 type:"GET",
                 datatype:"JSON",
                 success:function(respuesta){
@@ -135,7 +135,7 @@ function guardarInformacionBicicleta(){
     $.ajax (
         {
 
-            url          : 'http://localhost:8080/api/Bike/save',
+            url          : BASE_URL +'/api/Bike/save',
             type         : 'POST',
             data         :  dataToSend,
             datatype     :  "JSON",
@@ -187,7 +187,7 @@ function guardarInformacionCliente(){
 function traerInformacionCliente(){
     $.ajax(
               {
-                url:BASE_URL + "/api/Client/all",
+                url:BASE_URL + '/api/Client/all',
                 type:"GET",
                 datatype:"JSON",
                 success:function(respuesta){
@@ -329,7 +329,7 @@ function guardarInformacionReservacion(){
 function traerInformacionReservacion(){
     $.ajax(
               {
-                url:BASE_URL + "/api/Reservation/all",
+                url:BASE_URL + '/api/Reservation/all',
                 type:"GET",
                 datatype:"JSON",
                 success:function(respuesta){
